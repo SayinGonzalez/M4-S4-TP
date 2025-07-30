@@ -10,7 +10,9 @@ export default function useApi() {
 
   /*   Fn para Obtener Todos los Personajes   */
   const getAllCharacters = useCallback(async () => {
+
     console.log("Ejecutando getAllCharacters...");
+
     setLoading(true);
     setError(null);
 
@@ -31,13 +33,13 @@ export default function useApi() {
   }, []); // ← no depende de nada externo
 
   /*   Fn para Obtener Personajes por Parámetros   */
-  const getCharactersByParams = useCallback(async (name, page) => {
+  const getCharactersByParams = useCallback(async (name) => {
 
     setLoading(true);
     setError(null);
 
     try {
-      const { info, results: firstPageResults } = await fetchCharactersByParams(name, page);
+      const { info, results: firstPageResults } = await fetchCharactersByParams(name);
 
       const otherPages = await Promise.all(
         Array.from({ length: info.pages - 1 }, (_, i) => fetchCharactersByParams(name, i + 2))
@@ -45,8 +47,9 @@ export default function useApi() {
       const restResults = otherPages.flatMap(page => page.results);
 
       setCharacters([...firstPageResults, ...restResults]);
-    } catch {
-      setError("No se encontraron personajes con ese nombre");
+    } catch (error) {
+      console.log(error)
+      setError(error.msg || "Por favor ingrese campos válidas");
       setCharacters([]);
     } finally {
       setLoading(false);
@@ -66,35 +69,3 @@ export default function useApi() {
     getCharactersByParams
   };
 }
-
-/* 
-
-name
-status
-species
-gender
-
-  try {
-    const { info, results: firstPageResults } = await fetchAllCharacters();
-    
-    const otherPages = await Promise.all(
-      Array.from({ length: info.pages - 1 }, (_, i) => fetchAllCharacters(i + 2))
-    );
-
-    const restResults = otherPages.flatMap(p => p.results);
-    
-    setCharacters([...firstPageResults, ...restResults]);
-  }
-
-  try {
-    const response = await fetchAllCharacters();
-    let allCharacters = [...response.results];
-
-    for (let i = 2; i <= response.info.pages; i++) {
-      const chs = await fetchAllCharacters(i);
-      allCharacters = [...allCharacters, ...chs.results];
-    }
-
-    setCharacters(allCharacters);
-  }
-*/

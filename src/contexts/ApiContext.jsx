@@ -6,10 +6,8 @@ import { ApiContext } from "../hooks/useCreateContexts";
 //  2. Crear el provide
 export const ApiProvider = ({ children }) => {
 
-  console.log("Render de ApiContext antes de useApi")
+  console.log("⚛️ Se montó ApiProvider");
   const charactersApi = useApi();
-  // console.log("⚛️ Se montó ApiProvider");
-  // console.log("personajes Context:", charactersApi.characters)
   
   return (
     <ApiContext.Provider value={charactersApi}>

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ApiContext, ThemeContext } from "./useCreateContexts";
+import { ApiContext, FavsContext, ThemeContext } from "./useCreateContexts";
 
 //  3. Consumir el contexto (useContext)
 
@@ -14,5 +14,12 @@ export const useThemeContext = () => {
 export const useApiContext = () => {
   // console.log("⚛️ Se montó useApiContext");
   return useContext(ApiContext);
+}
+/* ────────────────────────────────────────────────────────────────────────────── */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Favoritos   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+export const useFavsContext = () => {
+  return useContext(FavsContext)
 }
 /* ────────────────────────────────────────────────────────────────────────────── */

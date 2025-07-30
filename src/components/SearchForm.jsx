@@ -13,11 +13,10 @@ const SearchForm = () => {
     console.log("Buscando personajes...");
     !query
       ? getAllCharacters()
-      : getCharactersByParams(query); // Llama al hook con el nombre ingresado
+      : getCharactersByParams(query);  // Llama al hook con el nombre ingresado
   };
 
-  const HandleChange = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
     setQuery(e.target.value);
   }
 
@@ -26,12 +25,12 @@ const SearchForm = () => {
       <input
         type="text"
         value={query}
-        onChange={HandleChange}
-        placeholder="Buscar personajes..."
-        className=" bg-slate-500 font-mono text-slate-200 text-lg px-4 rounded-l-lg border-y border-l border-slate-200"
+        onChange={handleChange}
+        placeholder="Nombre del personaje"
+        className=" bg-slate-500 font-mono text-slate-200 text-lg px-4 rounded-l-lg border-y border-l border-slate-300 w-1/3 focus:outline-none focus-visible:border-slate-100"
       />
-      <button type="submit" className="bg-indigo-950 text-lg px-3 rounded-r-lg border-y border-r border-slate-200">
-        🔍
+      <button type="submit" className="bg-indigo-950 text-lg px-3 rounded-r-lg border-y border-r border-slate-300 in-focus-within:border-slate-100">
+        <i className="bi bi-search text-slate-100"></i>
       </button>
     </form>
   );
