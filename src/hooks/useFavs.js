@@ -24,11 +24,13 @@ export default function useFavs() {
   // Añadir nuevo personaje a favs
   const addToFavs = (char) => {
     setFavs([...favs, char]);
+    return true;
   };
 
   // Remover un personaje de favs
   const removeFromFavs = (charId) => {
     setFavs((prevFavs) => prevFavs.filter((char) => char.id !== charId));
+    return true;
   };
 
   /* // Remover todo lo de favs

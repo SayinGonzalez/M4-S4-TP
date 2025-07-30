@@ -10,10 +10,9 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Buscando personajes...");
     !query
-      ? getAllCharacters()
-      : getCharactersByParams(query);  // Llama al hook con el nombre ingresado
+    ? getAllCharacters()
+    : getCharactersByParams(query);  // Llama al hook con el nombre ingresado
   };
 
   const handleChange = (e) => {

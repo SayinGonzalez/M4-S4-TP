@@ -6,7 +6,7 @@ const CharacterCard = ({ char }) => {
 
   return (
     <div className='
-      relative
+      relative z-0
       bg-[#44803F] dark:bg-indigo-950 
       w-full p-4 xl:p-5 rounded-xl shadow-md text-center
       flex flex-col justify-between

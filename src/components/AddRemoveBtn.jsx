@@ -1,17 +1,17 @@
 import { useFavsContext } from "../hooks/useConsumeContexts";
+import { toast } from "react-toastify";
 
 const AddRemoveBtn = ({ charId, char }) => {
 
   const { addToFavs, isInFavs, removeFromFavs } = useFavsContext();
 
   const removeChar = () => {
-    removeFromFavs(charId);
-    // Notificación
+    console.log("toast");
+    removeFromFavs(charId) && toast.success('Eliminado de favoritos!');
   }
 
   const addChar = () => {
-    addToFavs(char);
-    // Notificación
+    addToFavs(char) && toast.success('Agregado a favoritos!');
   }
 
   return (

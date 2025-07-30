@@ -15,7 +15,7 @@ const FavsSidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
     <>
       {
         /*  Renzeriza el Modal si isModalOpen es true  */
-        isSidebarOpen && <div className="fixed inset-0 bg-black/90 flex justify-end">
+        isSidebarOpen && <div className="fixed inset-0 z-20 bg-black/90 flex justify-end">
           {/* CONTENEDOR SIDEBAR */}
           <div className='
             bg-[#B4CF66] dark:bg-[#3d348b]

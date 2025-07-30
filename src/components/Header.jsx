@@ -6,7 +6,7 @@ const Header = ({ setIsSidebarOpen }) => {
 
   return (
     <header className="
-      text-white p-4 flex justify-between
+      text-white p-4 flex justify-between z-10
       sticky top-0 shadow shadow-black dark:shadow-slate-500
       bg-[#44803F] 
       dark:bg-[#13102F]

@@ -10,11 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroui/accordion": "^2.2.21",
+    "@heroui/react": "^2.8.2",
+    "@heroui/skeleton": "^2.2.15",
+    "@heroui/spinner": "^2.2.21",
+    "@heroui/toast": "^2.0.14",
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.11.0",
     "bootstrap-icons": "^1.13.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {

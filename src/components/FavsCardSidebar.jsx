@@ -9,7 +9,6 @@ const FavsCardSidebar = ({ char }) => {
   const { removeFromFavs } = useFavsContext();
 
   return (
-
     <li key={char.id} className="bg-[#44803F] dark:bg-indigo-950 flex items-center justify-between p-2 mb-3 rounded-lg">
 
       {/*  Imágen de la película  */}
@@ -35,8 +34,6 @@ const FavsCardSidebar = ({ char }) => {
       </div>
 
     </li>
-
-
   )
 }
 
