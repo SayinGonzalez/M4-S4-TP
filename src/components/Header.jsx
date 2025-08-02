@@ -1,6 +1,10 @@
+
+import { useFavsContext } from "../hooks/useConsumeContexts"
 import ThemeButton from "./ThemeButton"
 
-const Header = ({ setIsSidebarOpen }) => {
+const Header = () => {
+
+  const { setIsSidebarOpen } = useFavsContext();
 
   const handleOpenSidebar = () => setIsSidebarOpen(true)
 
@@ -15,9 +19,8 @@ const Header = ({ setIsSidebarOpen }) => {
       {/*  Btn para cambiar el tema Claro/Oscuro */}
       <ThemeButton />
 
-      {/*  Btn para ver el modal de "Carrito"  */}
+      {/*  Btn para abrir el sidebar de "Favoritos"  */}
       <button
-        /*  Si es Celular o Tablet - un click  */
         onClick={handleOpenSidebar}
         className="
           flex gap-2.5

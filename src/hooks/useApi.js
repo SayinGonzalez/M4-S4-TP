@@ -1,3 +1,5 @@
+//  Hook con la lógica relacionada a API
+
 import { useState, useCallback, useEffect } from "react";
 import { fetchAllCharacters, fetchCharactersByParams } from "../services/apiService";
 

@@ -1,3 +1,5 @@
+//  Hook con el consumo de cada contexto
+
 import { useContext } from "react";
 import { ApiContext, FavsContext, ThemeContext } from "./useCreateContexts";
 

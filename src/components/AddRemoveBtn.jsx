@@ -1,3 +1,5 @@
+// Funcionalidad de añadir y remover de Favs
+
 import { useFavsContext } from "../hooks/useConsumeContexts";
 import { toast } from "react-toastify";
 

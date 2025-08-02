@@ -1,4 +1,4 @@
-//  Maneja el estado global del carrito
+//  Maneja el estado global de Favoritos
 
 import { FavsContext } from "../hooks/useCreateContexts";
 import useFavs from "../hooks/useFavs";

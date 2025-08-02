@@ -2,13 +2,11 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import CharacterGrid from "./components/CharacterGrid";
 import SearchForm from "./components/SearchForm";
-import { useState } from "react";
 import FavsSidebar from "./components/FavsSidebar";
 import { ToastContainer, Slide } from 'react-toastify';
 
 const App = () => {
   // console.log("Render de App");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
     <>
@@ -26,16 +24,14 @@ const App = () => {
           theme="dark"
           transition={Slide}
         />
-        <Header setIsSidebarOpen={setIsSidebarOpen} />
+        
+        <Header />
 
         <SearchForm />
         <CharacterGrid />
 
         {/*  Carrito  */}
-        <FavsSidebar
-          isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={setIsSidebarOpen}
-        />
+        <FavsSidebar />
 
         <Footer />
       </div>

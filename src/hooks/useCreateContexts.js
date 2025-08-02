@@ -1,3 +1,5 @@
+//  Hook con la creación de cada contexto
+
 import { createContext } from "react";
 
 //  1. Crear el contexto (createContext)

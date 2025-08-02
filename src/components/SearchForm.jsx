@@ -10,8 +10,8 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    !query
-    ? getAllCharacters()
+    !query   //  Si el input está vacío 
+    ? getAllCharacters()   //  Obtiene todos los personajes sino
     : getCharactersByParams(query);  // Llama al hook con el nombre ingresado
   };
 

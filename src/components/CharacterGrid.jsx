@@ -1,14 +1,20 @@
+//  Lógica para renderizar el listado de personajes
+
 import { toast } from "react-toastify";
 import { useApiContext } from "../hooks/useConsumeContexts";
 import CharacterCard from "./CharacterCard";
+import { useEffect } from "react";
 
 const CharacterGrid = () => {
 
   const { characters, loading, error } = useApiContext();
 
-  // console.log(`personajes APP:`, characters);
-  loading && toast('Buscando personajes!')
-  error && toast.error('Error al obtener los Personajes!')
+  console.log(`personajes APP:`, characters);
+
+  useEffect(() => {
+    loading && toast('Buscando personajes!')
+    error && toast.error('Error al obtener los Personajes!')
+  }, [loading, error])
 
   return (
     <>

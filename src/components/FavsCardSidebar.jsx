@@ -2,8 +2,7 @@
 
 import { useFavsContext } from "../hooks/useConsumeContexts";
 
-
-//  Card para las pelis en el modal
+//  Card para los personajes en el sidebar
 const FavsCardSidebar = ({ char }) => {
 
   const { removeFromFavs } = useFavsContext();
@@ -11,7 +10,7 @@ const FavsCardSidebar = ({ char }) => {
   return (
     <li key={char.id} className="bg-[#44803F] dark:bg-indigo-950 flex items-center justify-between p-2 mb-3 rounded-lg">
 
-      {/*  Imágen de la película  */}
+      {/*  Imágen del personaje */}
       <div className="min-w-18 max-w-16 h-fit overflow-hidden rounded-lg">
         <img
           src={char.image}
@@ -20,7 +19,7 @@ const FavsCardSidebar = ({ char }) => {
         />
       </div>
 
-      {/*  Nombre de la película  */}
+      {/*  Nombre del personaje  */}
       <span className="text-white text-center">{char.name}</span>
 
       <div className="flex gap-4 items-center text-slate-200 dark:text-slate-400">

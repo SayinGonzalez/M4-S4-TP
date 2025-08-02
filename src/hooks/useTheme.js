@@ -1,3 +1,5 @@
+//  Hook con la lógica relacionada al cambio de tema claro/oscuro
+
 import { useEffect, useState } from "react";
 
 export default function useTheme() {

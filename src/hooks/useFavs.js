@@ -1,3 +1,5 @@
+//  Hook con la lógica relacionada a la lista de Favoritos
+
 import { useEffect, useState } from "react";
 
 export default function useFavs() {
@@ -16,6 +18,8 @@ export default function useFavs() {
     localStorage.setItem("favs", JSON.stringify(favs));
   }, [favs]);
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
 
   /* ────────────────────────────────────────────────────────────────────────────── */
 
@@ -33,10 +37,10 @@ export default function useFavs() {
     return true;
   };
 
-  /* // Remover todo lo de favs
-    const RemoveAllFavs = () => {
-      setFavs([])
-    } */
+  // Remover todo lo de favs
+  const RemoveAllFavs = () => {
+    setFavs([])
+  }
 
   // Verifica si el personaje se encuentra en la lista
   const isInFavs = (charId) =>
@@ -48,7 +52,10 @@ export default function useFavs() {
     favs,
     addToFavs,
     removeFromFavs,
-    isInFavs
+    RemoveAllFavs,
+    isInFavs,
+    isSidebarOpen,
+    setIsSidebarOpen
   };
 }
 
